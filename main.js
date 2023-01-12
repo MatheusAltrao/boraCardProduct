@@ -13,14 +13,13 @@ function spinProduct() {
   iconSpin.classList.add('none')
   iconClose.classList.remove('none')
 
-  product.src = './assets/gifProduct1.gif'
+  product.setAttribute('src', './assets/gifProduct1.gif')
 }
 
 function stopSpin() {
   iconClose.classList.add('none')
   iconSpin.classList.remove('none')
 
-
-  product.src = './assets/imgProduct1.png'
+  product.setAttribute('src', './assets/imgProduct1.png')
 }
 

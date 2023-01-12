@@ -34,20 +34,13 @@ p {
 
   display: flex;
   align-items: center;
-  display: flex;
   justify-content: center;
 
 }
 
-.card {
-
-  padding: 1rem;
-  display: flex;
-  gap: 1rem;
-}
-
 .image {
   width: 100%;
+  max-width: 450px;
   height: 266px;
 
   position: relative;
@@ -77,7 +70,7 @@ img {
 
   padding-top: 3rem;
 
-  width: 100%;
+
 }
 
 .code {
@@ -136,7 +129,7 @@ img {
 }
 
 .description :nth-child(1) {
-  animation: fromBottomP 0.5s ease backwards;
+  animation: fromRightP 0.5s ease backwards;
   animation-delay: 0.2s;
 }
 
@@ -146,7 +139,7 @@ img {
 }
 
 .description :nth-child(3) {
-  animation: fromBottomP 0.5s ease backwards;
+  animation: fromRightP 0.5s ease backwards;
   animation-delay: 0.6s;
 }
 
@@ -167,7 +160,19 @@ img {
   }
 }
 
-@keyframes fromBottomP {
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fromRightP {
   from {
     opacity: 0;
     transform: translateX(30px);
@@ -191,8 +196,32 @@ img {
   }
 }
 
+@keyframes fromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fromLeftP {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 0.7;
+    transform: translateX(0px);
+  }
+}
+
 @media (width<800px) {
-  .card {
+  .container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -210,6 +239,31 @@ img {
 
   .description {
     width: 280px;
+  }
+
+  .image {
+    animation: fromTop 0.5s ease backwards;
+    animation-delay: 0.1s;
+  }
+
+  .description :nth-child(1) {
+    animation: fromLeftP 0.5s ease backwards;
+    animation-delay: 0.2s;
+  }
+
+  .description :nth-child(2) {
+    animation: fromLeft 0.5s ease backwards;
+    animation-delay: 0.4s;
+  }
+
+  .description :nth-child(3) {
+    animation: fromLeftP 0.5s ease backwards;
+    animation-delay: 0.6s;
+  }
+
+  .description :nth-child(4) {
+    animation: fromLeft 0.5s ease backwards;
+    animation-delay: 0.8s;
   }
 
 }
